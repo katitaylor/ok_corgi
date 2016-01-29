@@ -22,6 +22,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('images'));
 
+var mongoose = require('mongoose');
+mongoose.connect(process.env.DB_OK_CORGI);
+
 app.use('/', routes);
 
 // catch 404 and forward to error handler

@@ -21,13 +21,13 @@ router.get('/', function(req, res, next) {
 /* GET liked page. */
 router.get('/liked', function(req, res, next) {
 
-  Dog.find({}, 'name age image', function(err, dog) {
+  Dog.find({}, 'name age image', function(err, dogs) {
     //console.log("hey");
     if (err) throw (err);
-    console.log(dog.name);
+    console.log(dogs);
 
-    res.send("works!");
-    //res.render('liked', { title: 'Fave Dogs: ', name: name, age: age, image: image });
+    //res.send("works!");
+    res.render('liked', { title: 'Fave Dogs: ', dogs: dogs });
   });
   //res.render('liked', { title: 'Fave Dogs: ' });
 });
