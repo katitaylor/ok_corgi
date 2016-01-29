@@ -1,11 +1,13 @@
-// var mongoose = require('mongoose');
-// // var Schema = mongoose.Schema;
+var mongoose = require('mongoose');
+// var Schema = mongoose.Schema;
 
-// var complimentSchema = new mongoose.Schema({
-//  compliment: { type: String, required: true }
-// });
+var dogSchema = new mongoose.Schema({
+ name: { type: String, required: true },
+ age: { type: String, required: true },
+ image: { type: String, required: true },
+});
 
-// var Compliment = mongoose.model('Compliment', complimentSchema);
-// // Make this available to our other filee
+var Dog = mongoose.model('Dog', dogSchema);
+// Make this available to our other filee
 
-// module.exports = Compliment;// Dog model w/ Mongoose
+module.exports = Dog;// Dog model w/ Mongoose

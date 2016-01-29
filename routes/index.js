@@ -8,7 +8,15 @@ router.get('/', function(req, res, next) {
 
 /* GET liked page. */
 router.get('/liked', function(req, res, next) {
-  res.render('liked', { title: 'Fave Dogs: ' });
+
+  Dog.find({}, 'name age image', function(err) {
+    if (err) console.log(err);
+    console.log();
+
+    res.send("works!");
+    //res.render('liked', { title: 'Fave Dogs: ', name: name, age: age, image: image });
+  });
+  //res.render('liked', { title: 'Fave Dogs: ' });
 });
 
 module.exports = router;
